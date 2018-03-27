@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+<nav class="navbar navbar-expand-sm navbar-dark">
     <a class="navbar-brand pl-4" href="/">Startify</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,12 +13,25 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navDropdownMenu" data-toggle="dropdown" href="/about">Your Startups</a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="/ideas/add">Create Startup Idea</a>
-            <a class="dropdown-item" href="/ideas">View Your Ideas</a>
-          </div>
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navDropdownMenu" data-toggle="dropdown" href="/about">Your Startups</a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="/ideas/add">Create Startup Idea</a>
+              <a class="dropdown-item" href="/ideas">View Your Ideas</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="/users/logout" class="nav-link">Logout</a>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a href="/users/login" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/signup" class="nav-link">Signup</a>
+          </li>
+        {{/if}}
       </ul>
     </div>
 </nav>

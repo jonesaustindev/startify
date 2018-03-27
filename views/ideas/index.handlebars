@@ -1,4 +1,5 @@
 {{#each ideas}}
+<div class="container mt-3">
   <div class="card card-body mb-4">
     <h4>{{name}}</h4>
     <p>{{description}}</p>
@@ -8,6 +9,10 @@
       <input type="submit" class="btn btn-outline-danger btn-block" value="Delete">
     </form>
   </div>
+</div>
+
 {{else}}
+<div class="container">
   <p>You don't have any startup ideas yet!</p>
+</div>
 {{/each}}

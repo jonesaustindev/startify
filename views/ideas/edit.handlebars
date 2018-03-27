@@ -1,23 +1,28 @@
 {{#each errors}}
-  <div class="alert alert-danger">{{text}}</div>
+<div class="container">
+  <div class="container alert alert-danger">{{text}}</div>
+</div>
+
 {{else}}
 
 {{/each}}
 
-<div class="card">
-  <div class="card-body">
-    <h2 class="text-center">Edit Your Startup</h2>
-    <form action="/ideas/{{idea.id}}?_method=PUT" method="post">
-      <input type="hidden" name="_method" value="put">
-      <div class="form-group">
-        <label for="name">Startup name</label>
-        <input type="text" name="name" class="form-control" value="{{idea.name}}" required>
-      </div>
-      <div class="form-group">
-        <label class="text-center" for="description">What is it?</label>
-        <textarea name="description" class="form-control" rows="4" required>{{idea.description}}</textarea>
-      </div>
-      <button type="submit" class="btn btn-outline-primary">Save Changes</button>
-    </form>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="text-center">Edit Your Startup</h2>
+      <form action="/ideas/{{idea.id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="put">
+        <div class="form-group">
+          <label for="name">Startup name</label>
+          <input type="text" name="name" class="form-control" value="{{idea.name}}" required>
+        </div>
+        <div class="form-group">
+          <label class="text-center" for="description">What is it?</label>
+          <textarea name="description" class="form-control" rows="4" required>{{idea.description}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Save Changes</button>
+      </form>
+    </div>
   </div>
 </div>
