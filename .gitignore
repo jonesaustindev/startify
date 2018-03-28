@@ -1,6 +1,6 @@
 # dependencies
 /node_modules
-/config/prod.js
+/config/dev.js
 
 # testing
 /coverage
