@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Config for db
-const db = require("./config/database");
+const db = require("./config/keys");
 
 
 // Connecting to mongoose //
